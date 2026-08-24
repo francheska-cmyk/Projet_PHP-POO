@@ -1,0 +1,39 @@
+CREATE DATABASE IF NOT EXISTS movie_library CHARSET utf8mb4; 
+USE movie_library; 
+
+CREATE TABLE IF NOT EXISTS genre (
+id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+genre_name VARCHAR (100) NOT NULL UNIQUE
+); 
+
+CREATE TABLE IF NOT EXISTS producer (
+id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+lastname VARCHAR(50), 
+firstname VARCHAR (50) NOT NULL
+); 
+
+CREATE TABLE IF NOT EXISTS movie (
+id INT AUTO_INCREMENT PRIMARY KEY NOT NULL, 
+title VARCHAR(255) NOT NULL,  
+synopsis TEXT NOT NULL, 
+release_date DATE, 
+rating DECIMAL (3,1), 
+producer_id INT NOT NULL, 
+CONSTRAINT fk_to_product_producer
+FOREIGN KEY(producer_id)
+REFERENCES producer(id) ON DELETE CASCADE
+); 
+
+CREATE TABLE IF NOT EXISTS movie_genre (
+movie_id INT NOT NULL, 
+genre_id INT NOT NULL, 
+PRIMARY KEY (movie_id, genre_id), 
+CONSTRAINT fk_to_assign_movie
+FOREIGN KEY(movie_id)
+REFERENCES movie(id) ON DELETE CASCADE,
+CONSTRAINT fk_to_add_genre
+FOREIGN KEY(genre_id)
+REFERENCES genre(id) ON DELETE CASCADE
+); 
+
+ALTER TABLE movie MODIFY rating DECIMAL(3,1);
