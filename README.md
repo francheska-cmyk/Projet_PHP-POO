@@ -1,3 +1,5 @@
+Projet en cours - non terminé
+
 # 🎬 Filmathèque
 
 Application web de gestion de films développée en **PHP orienté objet**, suivant l'architecture **MVC** (Modèle-Vue-Contrôleur), sans framework — dans le but de démontrer la compréhension de ces concepts fondamentaux.
