@@ -1,19 +1,12 @@
 <?php 
 
-require_once ('./config/database.php'); 
-
 class Movie {
-    private ?PDO $connexion = null;
+    private PDO $bdd;
 
-
-    public function __construct(PDO $connexion) {
-        $this->connexion = $connexion;
-        $this->connexion -> getConnexion();
-
+    public function __construct(PDO $bdd) {
+        $this->bdd = $bdd; 
 
     }
-
 }
-
 
 ?>

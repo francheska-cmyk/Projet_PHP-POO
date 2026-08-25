@@ -25,7 +25,9 @@
 
 // METHODE B pour créer la connexion sans classe
 
-
-
-
+function connect (){
+    return new PDO('mysql:host=127.0.0.1:3306;dbname=movie_library', 'root', 'root', [
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+    ]); 
+}
 ?>
