@@ -14,7 +14,6 @@ $film1 = new Film ("Sutter Island", "Martin Scorsese",  "En 1954, une meurtrièr
     <title>Liste des films</title>
 </head>
 <body>
-  
         <h1>Fiche du Film</h1>
         <h2> Titre : <?= $film1->getTitre();?></h2>
         <h2>Réalisateur : <?= $film1->getRealisateur(); ?></h2>

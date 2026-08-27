@@ -1,6 +1,6 @@
 <?php
 include ('modelMovie.php'); 
-include ('viewMovie.php')
+include ('viewMovie.php'); 
 function displayMovies(){
     //1. CONNEXION A LA BDD
     $bdd -> connect ($bdd); 
